@@ -4,117 +4,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple & Responsive Login Form</title>
+    <title>Delicious Delights</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            margin: 0;
-            padding: 0;
-        }
+            :root{
+                --main-color:#f39c12;
+            }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f8f9fa;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
 
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            height: 100vh;
-        }
-
-        .column {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .column:nth-child(2) {
-            background-color: #1c1e21;
-            color: white;
-        }
-
-        h2 {
-            margin-bottom: 25px;
-            font-size: 24px;
-            display: block;
-        }
-
-        input {
-            width: 85%;
-            padding: 10px;
-            margin-bottom: 26px;
-            box-sizing: border-box;
-            border: 1px solid #555;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: #444;
-            color: white;
-        }
-
-        input[type="submit"] {
-            background-color: #1877f2;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #166fe5;
-        }
-
-        @media (max-width: 768px) {
             .container {
-                flex-direction: column;
+                max-width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-x: hidden;
             }
 
             .column {
-                width: 100%;
-                border-left: none;
-                padding: 10px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 20px;
+                position: relative;
+                overflow: hidden;
             }
-        }
-        img{
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-        }
+            .column:nth-child(1){
+                margin-top: 10%;
+            }
+            .curve-background {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: var(--main-color);
+                clip-path: polygon(20% 0, 100% 0, 100% 100%, 40% 50%);
+                z-index: -1;
+            }
+             h1{
+                color:  var(--main-color);
+           }
+            .hero-text {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                color: #333;
+                font-weight: bold;
+            }
+
+            .hero-paragraph {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                color: #555;
+            }
+            .highlight{
+                color: var(--main-color);
+            }
+            .order-button {
+                background-color: var(--main-color);
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                margin-bottom: 10px;
+            }
+
+            .order-button:hover {
+                background-color:#c87f0a;
+            }
+
+            .info-container {
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 10px;
+                width: calc(50% - 20px);
+                position: relative;
+            }
+
+            .rating {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            .rating i {
+                color: var(--main-color);
+                margin-right: 5px;
+            }
+
+            .items-info {
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+
+            .items-info img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                border-radius: 50%;
+                margin-right: 20px;
+                position: absolute;
+                top: -200%;
+                transform: translateY(-50%);
+                left: 110px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .deal-name{
+                color: var(--main-color);
+                font-weight: bold;
+            }
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column-reverse;
+                }
+
+                .info-container {
+                    width: 100%;
+                }
+                .hero-text {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: #333;
+                font-weight: bold;
+            }
+            h1{
+                font-size: 1rem;
+            }
+            .hero-paragraph {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+                color: #555;
+                }
+            .items-info img {
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                border-radius: 50%;
+                margin-right: 20px;
+                position: absolute;
+                top: 100%;
+                transform: translateY(-50%);
+                left: 70%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+            }
+            .food-image {
+                width: 80%;
+                height: auto;
+                max-width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .slideshow-controls {
+                display: flex;
+                justify-content: center; 
+                align-items: center; 
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+
+            .slideshow-controls i {
+                font-size: 24px;
+                cursor: pointer;
+                color: var(--main-color);
+                margin-right: 10px; 
+            }
+
+            .left-icon {
+                margin-right: 80px; 
+            }
+
+            .right-icon {
+                margin-left: 80px; 
+            }
+
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="column">
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/app-login-security-4897468-4077880.png" alt="">
-        </div>
-        <div class="column">
-            <div class="form-items">
-                <img src="codeifya-black-logo.png" alt="Logo" style="width: 150px; height: 100px;">
-                <h2>Login Form</h2>
-                <p>Welcome to our website!</p>
-                <form action="">
-                    <input type="text" placeholder="Username Or Email" id="username" required>
-                    <input type="password" placeholder="Password" id="password" required>
-                    <div style=" display: inline-block; justify-content: space-between; align-items: center;font-size: 15px; margin-bottom: 10px;">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                    <input type="submit" value="Log In">
-                </form>
+            <h1>Delicious Delights</h1>
+            <p class="hero-text">Enjoy <span class="highlight">amazing food </span> for your special meal experience.</p>
+            <p class="hero-paragraph">What do you want to order?</p>
+            <button class="order-button">Order Now</button>
+            <div class="row">
+            <div class="info-container col-lg-6">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <span>4.5</span>
+                </div>
+                <div class="items-info">
+                    <img src="https://foodbreakbhd.pk/img/hero.png" alt="Item 1">
+                    <span class="deal-name">Deal 1</span>
+                </div>
+                <p>Biryani, Burger, Broast</p>
+                <span>2000 PKR</span>
+            </div>
+            <div class="info-container">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <span>4.5</span>
+                </div>
+                <div class="items-info">
+                    <img src="https://www.freeiconspng.com/uploads/food-salad-21.png" alt="Item 1">
+                    <span class="deal-name">Deal 2</span>
+                </div>
+                <p>Biryani, Burger, Broast</p>
+                <span>1500 PKR</span>
             </div>
         </div>
-    </div>
-
+        </div>
+            <div class="column">
+                <div class="curve-background"></div>
+                <img class="food-image" src="https://www.pngarts.com/files/1/Veg-Food-PNG-Transparent-Image.png"
+                    alt="Delicious Food Image" id="foodImage">
+                <div class="slideshow-controls">
+                    <i class="fas fa-chevron-left left-icon" onclick="prevImage()"></i>
+                    <i class="fas fa-chevron-right right-icon" onclick="nextImage()"></i>
+                </div>
+            </div>
+       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+        <script>
+            var images = [
+                "https://www.pngarts.com/files/1/Veg-Food-PNG-Transparent-Image.png",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dcaf1af5-3162-42f2-a863-b4ce4d9d11ec/dd3d416-326cc8e4-ec52-451f-bcd2-5fba96dea4b3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RjYWYxYWY1LTMxNjItNDJmMi1hODYzLWI0Y2U0ZDlkMTFlY1wvZGQzZDQxNi0zMjZjYzhlNC1lYzUyLTQ1MWYtYmNkMi01ZmJhOTZkZWE0YjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.1t57IcCD5NWJ8yUKn4Q1iAwvJTa5g8-jvhicNz9R6fQ",  // Add your second image URL here
+                "https://static.vecteezy.com/system/resources/previews/025/065/314/non_2x/fast-food-meal-with-ai-generated-free-png.png"    // Add your third image URL here
+            ];
+    
+            var currentImageIndex = 0;
+            var foodImage = document.getElementById('foodImage');
+    
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            }
+    
+            function prevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            }
+    
+            function updateImage() {
+                foodImage.src = images[currentImageIndex];
+            }
+        </script>
 </body>
-
 </html>
